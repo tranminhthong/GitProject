@@ -1,0 +1,40 @@
+body {
+    padding: 50px;
+    width: 1000px;
+}
+
+table {
+    width: 1000px;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 20px;
+    border: 1px solid black;
+}
+th{
+    font-family: 'Patua One', cursive;
+    font-size:16px;
+    font-weight:400;
+    color: #151212;
+    text-align:center;
+    padding:20px;
+    background-color: #fad20e;
+    border-color: black;
+}
+td{
+    font-family: 'Open Sans', sans-serif;
+    font-weight:400;
+    color:#5f6062;
+    font-size:13px;
+    padding:20px 20px 20px 20px;
+    border-bottom:1px solid #000000;
+    text-align: center;
+}
+h1{
+    color: blue;
+    text-align: center;
+}
+p{
+    color: aqua;
+}

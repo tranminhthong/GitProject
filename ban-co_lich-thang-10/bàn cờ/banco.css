@@ -1,0 +1,16 @@
+body{
+    padding: 50px;
+    background-color: orange;
+}
+table{
+    width: 1000px;
+    height: 1000px;
+    border-collapse: collapse;
+    background-color: white;
+}
+tr:nth-child(2n+1) td:nth-child(2n){
+    background-color: black;
+}
+tr:nth-child(2n) td:nth-child(2n+1){
+    background-color: black;
+}
