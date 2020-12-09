@@ -1,0 +1,15 @@
+table{
+    border-collapse: collapse;
+    width: 100%;
+
+
+}
+td{
+    width: 30px;
+    height: 10px;
+}
+input{
+    width: 100px;
+    height: 20px;
+}
+
