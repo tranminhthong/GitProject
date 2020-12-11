@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <SCRIPT>
+        let dcc = parseFloat(prompt("nhập điểm chuyên cần:",''));
+        let dgk = parseFloat(prompt("nhập điểm giữa  kì: ",''));
+        let dck = parseFloat(prompt("nhập điểm cuối kì:",''));
+        let tb  = (dcc + dgk + dck)/3;
+        if (tb < 5){
+            alert("loại D")
+        }else if (tb <7 ){
+            alert("loại C")
+        }else if (tb < 9){
+            alert("loại B")
+        }else {
+            alert("loại A")
+        }
+     </SCRIPT>
+</body>
+</html>

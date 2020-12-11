@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Cách nào khai báo một biến và gán giá trị số nguyên là đúng trong các câu lệnh sau?<br/>
+    <label><input id="a1" type="radio" name="ans" value="A" onclick="chon(id)"> A. var 1x=10</label><br/>
+    <label><input id="b1" type="radio" name="ans" value="B" onclick="chon(id)"> B. var x=10</label><br/>
+    <label><input id="c1" type="radio" name="ans" value="C" onclick="chon(id)"> C. var x=10.0f</label><br/>
+    <label><input id="d1" type="radio" name="ans" value="D" onclick="chon(id)"> D. var x="10"</label><br/>
+</form>
+<p id="abc"></p>
+<script>
+    function chon(id){
+
+        if ( id == 'b1'){
+            document.getElementById('abc').innerHTML = 'đáp án đúng';
+        }else{
+            document.getElementById('abc').innerHTML = 'đáp án sai';
+        }
+    }
+</script>
+</body>
+</html>

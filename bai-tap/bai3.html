@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" size="50" onkeypress="keycode(event)">
+<p id="aaa"></p>
+<script>
+    function keycode(event) {
+        let x = event.keyCode;
+        if (x >= 48 && x <= 57) {
+            document.getElementById('aaa').innerHTML = "Bạn đã ấn: " + (x - 48);
+        }else{
+            document.getElementById('aaa').innerHTML = "Phím bạn ấn không phải số!";
+        }
+    }
+</script>
+</body>
+</html>
