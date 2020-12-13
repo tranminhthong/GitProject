@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="position: absolute;left: 200px;top: 200px;">Do you love me?</h1>
+<button style="position: absolute;left: 250px;top: 270px;" type="button" value="Yes" onclick="yesClick()">Yes</button>
+<button id="btNo" type="button" value="No" style="position: absolute;left: 300px;top: 270px;" onmouseover="noHover()">No</button>
+<script>
+    let txt = "";
+    txt += "<p>innerWidth: " + window.innerWidth + "</p>";
+    txt += "<p>innerHeight: " + window.innerHeight + "</p>";
+    txt += "<p>outerWidth: " + window.outerWidth + "</p>";
+    txt += "<p>outerHeight: " + window.outerHeight + "</p>";
+    console.log(txt + "<br/>");
+    function yesClick(){
+        alert("I love You");
+    }
+    function noHover(){
+        let a = Math.floor(Math.random()*1000);
+        let b = Math.floor(Math.random()*1000);
+        document.getElementById("btNo").style.left = a +"px";
+        document.getElementById("btNo").style.top = b +"px";
+    }
+</script>
+</body>
+</html>
