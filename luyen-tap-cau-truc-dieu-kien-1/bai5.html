@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let a , b , c , tb;
+    a = parseFloat(prompt("Nhập vào điểm kiểm tra:"));
+    b = parseFloat(prompt("Nhập vào điểm thi giữa kì:"));
+    c = parseFloat(prompt("Nhập vào điểm thi cuối kì:"));
+    tb = (a + b + c)/3;
+    if (tb < 5){
+        alert("Loại C");
+    }else if (tb >= 5 && tb < 8){
+        alert("loại B");
+    }else{
+        alert("Loại A");
+    }
+</script>
+</body>
+</html>

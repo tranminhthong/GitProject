@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let a, b, c, d, giaCuoc;
+    a = parseFloat(prompt("Số phút điện thoại đã dùng trong tháng:"));
+    b = 1000;
+    c = 1200;
+    d = 1500;
+    if (a < 1000){
+        giaCuoc = a*d;
+        alert("Cước điện thoại tháng này của bạn là: " + giaCuoc);
+    }else if(a < 1500){
+        giaCuoc = a*c;
+        alert("Cước điện thoại tháng này của bạn là: " + giaCuoc);
+    }else{
+        giaCuoc = a*b;
+        alert("Cước điện thoại tháng này của bạn là: " + giaCuoc);
+    }
+</script>
+</body>
+</html>
