@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<button id="play" type="button" name="chơi" style="width: 100px;height: 100px" onclick="playGame()">Chơi</button>
+<script>
+    function playGame() {
+        let a, b, c;
+        a = +prompt("Nhập khoảng đoán số");
+        b = +prompt("Nhập khoảng đoán số");
+        c = Math.floor(Math.random() * a) + b;
+        for (let i = 0; i < 3; i++) {
+            let d;
+            d = +prompt("Nhập 1 số trong khoảng trên");
+            if(d === c){
+                alert("Chúc mừng")
+            }else {
+                alert("Sai rồi!")
+            }
+        }
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
