@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+</head>
+<body>
+<script>
+    let a, b, c, thuNhap, thue;
+    a = 0.05;
+    b = 0.1;
+    c = 0.15;
+    thuNhap = +prompt("Nhập thu nhập: ");
+    if (thuNhap <= 5000000){
+        thue = thuNhap*a;
+        alert("Thuế thu nhập cá nhân là: " + thue);
+    }else if(thuNhap <= 15000000){
+        thue = thuNhap*b;
+        alert("Thuế thu nhập cá nhân là: " + thue);
+    }else {
+        thue = thuNhap*c;
+        alert("Thuế thu nhập cá nhân là: " + thue);
+    }
+</script>
+</body>
+</html>

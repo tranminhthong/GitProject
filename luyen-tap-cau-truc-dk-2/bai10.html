@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+</head>
+<body>
+<script>
+    let a, b, c, d, tienDien, soDien;
+    a = 1.678;
+    b = 1.734;
+    c = 2.014;
+    d = 2.536;
+    soDien = parseFloat(prompt("Nhập vào số điện:"));
+    if (soDien >=0 && soDien <= 50){
+        tienDien = soDien*a;
+        alert("tiền điện = " + tienDien);
+    }else if (soDien <= 100){
+        tienDien = soDien*b;
+        alert("tiền điện = " + tienDien);
+    }else if (soDien <= 200){
+        tienDien = soDien*c;
+        alert("tiền điện = " + tienDien);
+    }else {
+        tienDien = soDien*d;
+        alert("tiền điện = " + tienDien);
+    }
+</script>
+</body>
+</html>

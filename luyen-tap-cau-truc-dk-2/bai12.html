@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+<script>
+    let a, b, n, laiSuat;
+    a = 0.05;
+    n = 1;
+    while (n >= 1) {
+        b = +prompt("Nhập vào số tiền ban đầu:")
+        n = +prompt("nhập vào số tháng:")
+        laiSuat =b*(1 + a/n)**(a*n) ;
+        alert(laiSuat);
+    }
+</script>
+</body>
+</html>
