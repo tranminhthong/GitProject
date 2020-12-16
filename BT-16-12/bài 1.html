@@ -6,61 +6,72 @@
 </head>
 <body>
 <script>
-    let arr = [1, 4, 8, 1, 11, 25, -34, 21, 19, 2, 4, 53];
+    let arr = [1, 4, -8, -1, -11, -25, -34, -21, -19, 2, 4, 53];
     let sum = 0;
     let a = 0;
     let average;
-    for (let i = 0; i < arr.length; i += 2) {
-        if (arr[i] % 2 !== 0) {
-            a++
-            sum += arr[i];
+    /* for (let i = 0; i < arr.length; i += 2) {
+         if (arr[i] % 2 !== 0) {
+             a++
+             sum += arr[i];
+         }
+     }
+     average = sum / a;
+
+     alert("Trung bình cộng của các phần tử ở vị trí chẵn có giá trị lẻ là : " + average);
+
+     */
+
+    /*
+        let max = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
         }
-    }
-    average = sum / a;
+        alert("Giá trị lớn nhất trong mảng là : " + max);
 
-    alert("Trung bình cộng của các phần tử ở vị trí chẵn có giá trị lẻ là : " + average);
+     */
 
-
-    let max = arr[0];
-    for (let i = 0; i < arr.length; i++) {
-        if (max < arr[i]) {
-            max = arr[i];
+    /*
+        let min = arr[0];
+        let position = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (min >= arr[i]) {
+                min = arr[i];
+                position.push(i)
+            }
         }
-    }
-    alert("Giá trị lớn nhất trong mảng là : " + max);
+        alert("vị trí các phần tử nhỏ nhất là: " + position)
+
+     */
+
+    /*  for (let i = 0; i < arr.length; i++) {
+          if (arr[i] < 0) {
+              arr.splice(i, 1, 0);
+          }
+      }
+      alert("Mảng sau khi thay thế các số âm bằng 0 : " + arr);
 
 
-    let min = arr[0];
-    let position = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (min >= arr[i]) {
-            min = arr[i];
-            position.push(i)
-        }
-    }
-    alert("vị trí các phần tử nhỏ nhất là: " + position)
+     */
 
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] < 0) {
-            arr.splice(i, 1, 0);
-        }
-    }
-    alert("Mảng sau khi thay thế các số âm bằng 0 : " + arr);
-
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] < 0) {
-            arr.splice(i, 1)
+            arr.splice(i, 1);
+            i--;
         }
     }
     alert("Mảng sau khi xóa các số âm : " + arr);
+    /*
+        for (let i = 0; i < arr.length; i++) {
+            arr.sort(function (a, b) {
+                return a - b;
+            })
+        }
+        alert("Mảng sau khi  sắp xếp lại : " + arr);
 
-    for (let i = 0; i < arr.length; i++) {
-        arr.sort(function (a, b) {
-            return a - b;
-        })
-    }
-    alert("Mảng sau khi  sắp xếp lại : " + arr);
+     */
 </script>
 </body>
 </html>

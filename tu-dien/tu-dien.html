@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h2>Từ điển</h2>
+<input id="nhap" type="text">
+<input type="button" value="Search" onclick="search()">
+<p id="hi"></p>
+<script>
+    let enWord = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    let viWord = ["Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy", "Chủ nhật"];
+
+    function search(){
+        let a = document.getElementById("nhap").value;
+        for (let i = 0; i < enWord.length; i++) {
+            if (a === enWord[i]) {
+                document.getElementById("hi").innerHTML = viWord[i];
+                break;
+            } else {
+                document.getElementById("hi").innerHTML = "Not found!"
+            }
+        }
+    }
+</script>
+</body>
+</html>
