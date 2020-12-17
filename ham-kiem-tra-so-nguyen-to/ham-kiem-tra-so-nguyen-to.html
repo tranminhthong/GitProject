@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    function isPrime(number) {
+        let prime = true;
+        if (number < 2) {
+            prime = false;
+        } else if (number === 2) {
+            prime = true;
+        } else if (number % 2 === 0) {
+            prime = false;
+        } else {
+            for (let i = 3; i < Math.sqrt(number); i += 2) {
+                if (number % i === 0) {
+                    prime = false;
+                    break;
+                }
+            }
+        }
+        return prime;
+    }
+
+    for (let i = 0; i < 10000; i++) {
+        if (isPrime(i))
+            document.getElementById("result").innerHTML += i + ", "
+    }
+</script>
+</body>
+</html>
