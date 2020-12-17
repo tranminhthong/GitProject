@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bài 6</title>
+    <title>Bài 7</title>
 </head>
 <body>
 <script>
@@ -16,14 +16,14 @@
     let m = false;
     for (let i = 0; i < mang.length; i++) {
         if (mang[i] === V) {
-            alert(V + " is in the array");
-            m = true
+            mang.splice(i,1);
+            m = true;
+            alert(mang);
         }
     }
     if (m === false) {
-        alert(V + " is not in the array")
+        alert(mang)
     }
-
 </script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    let mang1 = [];
+    let n = 10;
+    for (let i = 0; i < n; i++) {
+        let a = +prompt("Nhập các số nguyên cho mảng 1:");
+        mang1.push(a);
+    }
+    let mang2 = [];
+    for (let i = 0; i < n; i++) {
+        let b = +prompt("Nhập các số nguyên cho mảng 2:");
+        mang2.push(b);
+    }
+    mang3 =  mang1.concat(mang2);
+    alert(mang3);
+</script>
+</body>
+</html>
