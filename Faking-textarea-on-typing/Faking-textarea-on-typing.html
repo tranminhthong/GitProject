@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <h1 style="text-align: center">Type anything slowly</h1>
+    <form name="nnn">
+        <textarea name="nm" rows="10" cols="50" onkeydown="typeTextarea()"></textarea>
+    </form>
+</div>
+<script>
+
+    var a = new Array(), n = "";
+    a[1] = 'T';
+    a[2] = 'Ô';
+    a[3] = 'I';
+    a[4] = ' ';
+    a[5] = 'B';
+    a[6] = 'Ị';
+    a[7] = ' ';
+    a[8] = 'N';
+    a[9] = 'G';
+    a[10] = 'Á';
+    a[11] = 'O';
+    a[12] = ' ';
+    a[13] = '!';
+    a[14] = '!';
+    a[15] = ' '
+
+    function typeTextarea() {
+        let b = document.nnn.nm.value;
+        let j = b.length;
+        if (j > 0) {
+            for (var i = 1; i <= j; i++) {
+                n = n + a[i];
+                if (i === 15) {
+                    document.nnn.nm.value = "";
+                    n = "";
+                }
+            }
+        }
+        document.nnn.nm.value = n;
+        n = "";
+        setTimeout("typeTextarea()", 0.01);
+    }
+
+
+</script>
+</body>
+</html>

@@ -13,14 +13,20 @@
     let enWord = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     let viWord = ["Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy", "Chủ nhật"];
 
-    function search(){
+    function search() {
         let a = document.getElementById("nhap").value;
         for (let i = 0; i < enWord.length; i++) {
             if (a === enWord[i]) {
                 document.getElementById("hi").innerHTML = viWord[i];
                 break;
             } else {
-                document.getElementById("hi").innerHTML = "Not found!"
+                if (a === viWord[i]) {
+                    document.getElementById("hi").innerHTML = enWord[i];
+                    break;
+                } else {
+                    document.getElementById("hi").innerHTML = "Not found!"
+                }
+
             }
         }
     }

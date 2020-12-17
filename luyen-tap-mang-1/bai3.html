@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+
+    let arr = [23, 5, 34, 544, 21, 56, 234, 564, 224, 54, 32];
+    let sum = 0;
+    let max = arr[0];
+    let average;
+    for (let i = 0; i < arr.length; i++) {
+        if (max < arr[i]) {
+            max = arr[i];
+        }
+        sum += arr[i];
+    }
+    average = sum / arr.length;
+    alert("Giá trị lớn nhất là : " + max);
+    alert("Trung bình các số trong mảng là : " + average);
+</script>
+</body>
+</html>

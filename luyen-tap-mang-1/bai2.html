@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let mang = [2, 3, 5, 2, 34, 534, 23, 123, 5, 243];
+    let max = mang[0];
+    let index;
+    for (let i = 0; i < mang.length; i++) {
+        if (max < mang[i]) {
+            max = mang[i];
+            index = i;
+        }
+    }
+    alert("Phần tử thứ " + index + " có giá trị lớn nhất là: " + max);
+</script>
+</body>
+</html>
