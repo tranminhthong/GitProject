@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <span>Meter : </span><br/>
+    <input type="number" oninput="meterToFoot(this.value)" placeholder="Enter a Meter"><br/>
+    <span>Feet : </span><br/>
+    <input type="number" oninput="footToMeter(this.value)" placeholder="Enter a Feet">
+
+</form>
+<p>Meter: <span id="displayMeter"></span></p>
+<p>Feet: <span id="displayFeet"></span></p>
+<script>
+    function footToMeter(foot) {
+        foot = parseFloat(foot);
+        document.getElementById("displayMeter").innerHTML = 0.305 * foot;
+    }
+
+    function meterToFoot(meter) {
+        meter = parseFloat(meter);
+        document.getElementById("displayFeet").innerHTML = 3.279 * meter;
+    }
+
+</script>
+</body>
+</html>
