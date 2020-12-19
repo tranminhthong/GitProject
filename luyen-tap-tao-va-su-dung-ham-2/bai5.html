@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    while (true) {
+        let num1 = parseInt(prompt("Nhập số thứ nhất: "));
+        let num2 = parseInt(prompt("Nhập số thứ hai: "));
+        let num3 = parseInt(prompt("Nhập số thứ ba: "));
+        minVal(num1, num2, num3);
+    }
+
+    function minVal(a, b, c) {
+        let min = a;
+        if (min < b && min < c) {
+            alert("Giá trị nhỏ nhất là: " + a);
+        } else if (b < c) {
+            alert("Giá trị nhỏ nhất là: " + b);
+        } else {
+            alert("Giá trị nhỏ nhất là: " + c);
+        }
+    }
+</script>
+</body>
+</html>

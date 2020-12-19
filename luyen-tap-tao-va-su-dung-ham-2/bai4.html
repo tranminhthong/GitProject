@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = prompt("Nhập số");
+    num = parseFloat(num)
+    checkNum(num);
+
+    function checkNum(a) {
+        if (isNaN(a) === false) {
+            alert("Là kí tự số");
+        }else {
+            alert("Không phải kí  tự số")
+        }
+
+    }
+</script>
+</body>
+</html>

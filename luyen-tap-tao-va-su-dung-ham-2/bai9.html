@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let word = prompt("Nhập một kí tự bất kì");
+    let array = [];
+    let n = parseInt(prompt("Nhập độ dài mảng"))
+    for (let i = 1; i <= n; i++) {
+        let a = prompt("Nhập các phần tử thứ " + i)
+        array.push(a)
+    }
+    check(array, word)
+
+    function check(arr, a) {
+        let found = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === a) {
+                alert("Kí tự " + "'" + a + "'" + " nằm trong mảng");
+                found = true;
+            }
+        }
+        if (found === false) {
+            alert("Kí tự " + "'" + a + "'" + " không nằm trong mảng")
+        }
+    }
+</script>
+</body>
+</html>

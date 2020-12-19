@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    while (true) {
+        let a = parseInt(prompt("Nhập vào só muốn tính giai thừa: "));
+        giaiThua(a);
+    }
+
+    function giaiThua(n) {
+        let gt = 1;
+        for (let i = 1; i <= n; i++) {
+            gt *= i;
+        }
+        alert(gt);
+    }
+</script>
+</body>
+</html>

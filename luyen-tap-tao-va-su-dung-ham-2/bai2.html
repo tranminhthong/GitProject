@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let r = parseFloat(prompt("Nhập bán kính đường tròn :"));
+    alert("Diện tích đường tròn = " + tinhArea(r));
+    alert("Chu vi đường tròn = " + tinhChuVi(r));
+
+    function tinhArea(r) {
+        let area = Math.PI * r * r;
+        return area;
+    }
+
+    function tinhChuVi(r) {
+        let chuvi = Math.PI * 2 * r;
+        return chuvi;
+    }
+</script>
+</body>
+</html>
