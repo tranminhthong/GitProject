@@ -6,13 +6,18 @@
 </head>
 <body>
 <script>
-    function func1(a){
-        if(a == 2)
-            return 2;
-        return a * func1(a - 1);
-    }
-    alert(func1(5));
+    let count = 1;
+    let cau = prompt("Nhập một câu");
+    alert("Có " + countWord(cau) + " từ trong câu vừa nhập");
 
+    function countWord(a) {
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] === ' ') {
+                count++
+            }
+        }
+        return count;
+    }
 </script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let n = parseInt(prompt("Nhập số lượng kí tự muốn nhập"))
+    for (let i = 0; i < n; i++) {
+        let a = prompt("Nhâp vào kí tự bất kì");
+        arr.push(a);
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === "-") {
+            // arr.splice(i,1,"_")
+            arr[i] = "_";
+        }
+    }
+    alert(arr);
+
+</script>
+</body>
+</html>
