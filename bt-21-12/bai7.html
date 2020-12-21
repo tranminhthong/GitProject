@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr;
+    arr = [];
+    addItem(arr);
+
+    function addItem(a) {
+        while (a !== "") {
+            a = prompt("Nhập vào phần tử muốn thêm");
+            arr.push(a);
+            alert("Mảng sau khi thêm : " + arr);
+        }
+    }
+
+</script>
+</body>
+</html>

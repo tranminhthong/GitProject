@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a, b;
+    a = parseFloat(prompt("Nhập số thứ nhất"));
+    b = parseFloat(prompt("Nhập số thứ hai"));
+    add_sub_mul_divi(a, b);
+
+    function add_sub_mul_divi(a, b) {
+        let add, sub, mul, divi;
+        add = a + b;
+        sub = a - b;
+        mul = a * b;
+        divi = a / b;
+        alert("Tổng 2 số vừa nhập là " + add);
+        alert("Hiệu 2 số vừa nhập là " + sub);
+        alert("Tích 2 số vừa nhập là " + mul);
+        alert("Thương 2 số vừa nhập là " + divi);
+    }
+</script>
+</body>
+</html>

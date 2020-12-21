@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt("Nhập vào giá trị"));
+    checkInt(a);
+
+    function checkInt(a) {
+        if (Number.isInteger(a)) {
+            alert("Giá trị nhập vào là số nguyên")
+        }else {
+            alert("Giá trị nhập vào không là số nguyên")
+        }
+    }
+</script>
+</body>
+</html>

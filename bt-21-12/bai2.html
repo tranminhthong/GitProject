@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr, sum, a, n;
+    arr = [];
+    n = parseInt(prompt("Nhập độ dài mảng"));
+    for (let i = 0; i < n; i++) {
+        a = parseFloat(prompt("Nhập vào số thứ " + i))
+        arr.push(a)
+    }
+    alert("Mảng vừa nhập " + arr)
+    sum = 0;
+    alert(avgArr(arr));
+
+    function avgArr(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum / arr.length;
+    }
+</script>
+</body>
+</html>

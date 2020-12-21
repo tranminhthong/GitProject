@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr, a, n;
+    arr = [];
+    n = parseInt(prompt("Nhập độ dài mảng"));
+    for (let i = 0; i < n; i++) {
+        a = parseFloat(prompt("Nhập vào số thứ " + i))
+        arr.push(a)
+    }
+    min_max(arr);
+
+    function min_max(a) {
+        let max = a[0];
+        let min = a[0];
+        for (let i = 0; i < a.length; i++) {
+            if (max < a[i]) {
+                max = a[i];
+            }
+        }
+        alert("Giá trị lớn nhất của mảng vừa nhập là " + max);
+        for (let i = 0; i < a.length; i++) {
+            if (min > a[i]) {
+                min = a[i];
+            }
+        }
+        alert("Giá trị nhỏ nhất của mảng vừa nhập là " + min);
+    }
+</script>
+</body>
+</html>

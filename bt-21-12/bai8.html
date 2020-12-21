@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = ["hello", 13, 345, "codegym", 4, -6, 4];
+    alert("mảng ban đầu: "+arr)
+    let i = parseInt(prompt("Nhập vị trí phần tử muốn xóa"));
+    deleteItem(i);
+    alert("mảng sau xóa : " + arr)
+
+    function deleteItem(i) {
+        arr.splice(i, 1);
+    }
+</script>
+</body>
+</html>
