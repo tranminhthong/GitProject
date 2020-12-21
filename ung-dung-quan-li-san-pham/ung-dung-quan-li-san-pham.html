@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        tr:nth-child(even) {
+            background-color: #f3f3f3;
+        }
+    </style>
 </head>
 <body>
-$END$
+<h3>Add New Product</h3>
+
+<form>
+    <label><input id="name" type="text" name="product" placeholder="New product" size="35" style="height: 30px"></label>
+    <button type="button" style="height: 35px; width: 50px" onclick="addProduct()">Add</button>
+</form>
+
+<h3>Display All Product</h3>
+
 </body>
 </html>
+<script>
+    let productName = ["Sony Xperia", "Sumsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4",
+        "Apple iPhone 6S", "Xiaomi Mi 5s Plus", "Apple iPhone 8 Plus", "Fujitsu F-04E",
+        "Oppo  A71"];
+    productList();
+
+    function addProduct() {
+        let a = document.getElementById("name").value;
+        productName.push(a);
+    }
+
+    function productList() {
+        let table = "<table>";
+        for (let i = 0; i < productName.length; i++) {
+            table = table + "<tr>" + "<td style='width: 300px'>" + productName[i] + "</td>" + "<td>"
+                + "<button>Edit</button>" + "</td>" + "<td>" + "<button>Delete</button>"
+                + "</td>" + "</tr>";
+        }
+        table = table + "</table>";
+        document.write(table);
+    }
+
+
+</script>
