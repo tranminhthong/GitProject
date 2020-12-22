@@ -21,21 +21,21 @@
         }
         this.setDay = function (day) {
             this.day = day;
-            return day;
         }
         this.setMonth = function (month) {
             this.month = month;
-            return month;
         }
         this.setYear = function (year) {
             this.year = year;
-            return year;
         }
         this.setDate = function (day, month, year) {
             this.day = day;
             this.month = month;
             this.year = year;
             return day + "/" + month + "/" + year;
+        }
+        this.toString = function (){
+            return this.day + "/" + this.month + "/" + this.year
         }
     };
     let date = new MyDate(2, 2, 2007);
@@ -44,12 +44,18 @@
     let year = date.getYear(); // 2007
     alert(day + "/" + month + "/" + year);
 
-    day = date.setDay(10);
-    month = date.setMonth(10);
-    year = date.setYear(2019);
-    alert(day + "/" + month + "/" + year)
-    l = date.setDate(prompt(), prompt(), prompt());
-    alert(l)
+    date.setDay(10);
+    date.setMonth(10);
+    date.setYear(2019);
+    let d = date.getDay();
+    let m = date.getMonth();
+    let y = date.getYear();
+    alert(d + "/" + m + "/" + y)
+
+    l = date.setDate(prompt("Day"), prompt("Month"), prompt("Year"));
+    alert("setDate"+l);
+
+    alert(date.toString());
 
 </script>
 </body>
