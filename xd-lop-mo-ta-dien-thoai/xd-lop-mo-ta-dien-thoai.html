@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="height: 500px; width: 1500px">
+
+    <div id="ip" style="height: 500px; width: 300px; border: 1px solid black; float: left; margin: 10px">
+        <p style="text-align: center">IPHONE 12</p>
+        <button type="button" onclick="isOn1()">On</button>
+        <button type="button" onclick="isOff1()">Off</button>
+        <p id="iphone"></p>
+        <textarea id="inputMessage1" cols="30" rows="5" placeholder="Enter your message"></textarea><br/>
+        <button id="send1" type="button" onclick="send1()">Send</button>
+        <button type="button" onclick="check1()">check inbox</button>
+        <p id="check1" style="font-size: x-small"></p>
+    </div>
+    <div id="ss" style="height: 500px; width: 300px; border: 1px solid black; float: left; margin: 10px">
+        <p style="text-align: center">SAMSUNG</p>
+        <button type="button" onclick="isOn2()">On</button>
+        <button type="button" onclick="isOff2()">Off</button>
+        <p id="samsung"></p>
+        <textarea id="inputMessage2" cols="30" rows="5" placeholder="Enter your message"></textarea><br/>
+        <button id="send2" type="button" onclick="send2()">Send</button>
+        <button type="button" onclick="check2()">check inbox</button>
+        <p id="check2" style="font-size: x-small"></p>
+    </div>
+</div>
+
+<script>
+    let Battery = function (mana) {
+        this.mana = mana;
+        if (mana <= 0) {
+            this.mana = 0;
+        } else if (mana >= 100) {
+            this.mana = 100;
+        } else {
+            this.mana = mana;
+        }
+    }
+    let Mobile = function (battery, isOn, memoryArea1, memoryArea2) {
+        this.battery = battery;
+        this.memoryArea1 = memoryArea1;
+        this.memoryArea2 = memoryArea2;
+        this.isOn = isOn;
+
+        this.turnOn = function () {
+            this.isOn = true;
+        }
+        this.turnOff = function () {
+            this.isOn = false;
+        }
+        this.setMemoryArea1 = function (memoryArea1) {
+            this.memoryArea1 = memoryArea1;
+        }
+        this.setMemoryArea2 = function () {
+            this.memoryArea2 = memoryArea2;
+        }
+        this.getMemoryArea1 = function () {
+            return this.memoryArea1;
+        }
+        this.getMemoryArea2 = function () {
+            return this.memoryArea2;
+        }
+
+    }
+    let batteryip = new Battery(25)
+    let batteryss = new Battery(1000)
+    let Iphone = new Mobile(batteryip, true, "", "");
+    let Samsung = new Mobile(batteryss, true, "", "");
+
+    function isOn1() {
+        Iphone.turnOn();
+        document.getElementById("iphone").innerHTML = "Iphone đang bật";
+    }
+
+    function isOn2() {
+        Iphone.turnOn();
+        document.getElementById("samsung").innerHTML = "Sumsung đang bật";
+    }
+
+    function isOff1() {
+        Iphone.turnOff();
+        document.getElementById("iphone").innerHTML = "Iphone đang tắt";
+    }
+
+    function isOff2() {
+        Samsung.turnOff();
+        document.getElementById("samsung").innerHTML = "Sumsung đang tắt";
+    }
+
+    function send1() {
+        let a = document.getElementById("inputMessage1").value;
+        Iphone.setMemoryArea1(a);
+    }
+
+    function check2() {
+        document.getElementById("check2").innerHTML = "Tin nhắn từ iPhone: " + Iphone.getMemoryArea1();
+    }
+
+    function send2() {
+        let a = document.getElementById("inputMessage2").value;
+        Samsung.setMemoryArea1(a);
+    }
+
+    function check1() {
+        document.getElementById("check1").innerHTML = "Tin nhắn từ Samsung: " + Samsung.getMemoryArea1();
+    }
+</script>
+</body>
+</html>
