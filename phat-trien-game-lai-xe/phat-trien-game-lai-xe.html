@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" height="500" width="300" style="background-image: url(ảnh/1.jpg)"></canvas>
+<script>
+    let c = document.getElementById("myCanvas");
+    let context = c.getContext('2d');
+    let img = new Image();
+    img.onload = function () {
+        context.drawImage(img, 60, 450);
+    }
+    img.src = "ảnh/tải xuống.jpg"
+
+</script>
 </body>
 </html>
