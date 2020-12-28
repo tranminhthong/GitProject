@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let tienVay = parseFloat(prompt("Nhập số tiền muốn vay : "));
+    let n = parseInt(prompt("Nhập vào số tháng vay : "));
+    let tienLai = 0
+    for (let i = 1; i <= n; i++) {
+        tienLai = tienVay * 0.05;
+        document.write("Tiền lãi sau tháng thứ " + i + " là: " + tienLai.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            + "<br/>");
+        tienVay += tienLai;
+        document.write("Tổng tiền phải trả sau tháng thứ " + i + " là: " + tienVay.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            + "<br/>" + "<br/>");
+    }
+
+</script>
+</body>
+</html>
