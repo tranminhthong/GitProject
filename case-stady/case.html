@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <link rel="stylesheet" href="game.css">
+
+</head>
+<body>
+<center>
+    <div>
+        <canvas id="myCanvas" width="900" height="600"></canvas>
+        <button id="refresh" onclick="plays()">Play</button>
+        <button id="pause" onclick="stops()">Pause/Resume</button>
+
+    </div>
+</center>
+
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext('2d');
+    let ballRadius = 7;
+    let x = Math.random() * (550 - 350) + 350;
+    let y = Math.random() * (400 - (canvas.height - 30)) + (canvas.height - 30);
+    let dx = 5;
+    let dy = -5;
+    let paddleHeight = 10;
+    let paddleWidth = 80;
+    let paddleX = (canvas.width - paddleWidth) / 2;
+    let brickColCount = 12;
+    let brickRowCount = 4;
+    let brickPadding = 10;
+    let brickWidth = 60;
+    let brickHeight = 20;
+    let brickOffSetTop = 30;
+    let brickOffSetLeft = 30;
+    let arrowLeft = false;
+    let arrowRight = false;
+    let score = 0;
+    let live = 2;
+    let paused = false;
+    let color = "#" + Math.random().toString(16).substr(2, 6);
+
+    function plays() {
+        document.getElementById("autoplay").play();
+        draw();
+    }
+
+    function stops() {
+        paused = !paused;
+        draw();
+    }
+
+    let bricks = [];
+    for (let r = 0; r < brickRowCount; r++) {
+        bricks[r] = [];
+        for (let c = 0; c < brickColCount; c++) {
+            bricks[r][c] = {x: 0, y: 0, status: 1}
+        }
+    }
+
+    document.addEventListener("keydown", keyDown, false);
+    document.addEventListener("keyup", keyUp, false);
+    document.addEventListener("mousemove", mouseMove, false);
+
+    function keyDown(e) {
+        if (e.keyCode === 37) {
+            arrowLeft = true;
+        } else if (e.keyCode === 39) {
+            arrowRight = true;
+        }
+    }
+
+    function keyUp(e) {
+        if (e.keyCode === 37) {
+            arrowLeft = false;
+        } else if (e.keyCode === 39) {
+            arrowRight = false;
+        }
+    }
+
+    function mouseMove(e) {
+        let relativeX = e.clientX - canvas.offsetLeft;
+        if (relativeX > 0 && relativeX < canvas.width) {
+            paddleX = relativeX - paddleWidth / 2;
+        }
+    }
+
+
+    function drawScore() {
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "#ecda36";
+        ctx.fillText("Score: " + score, 10, 20);
+    }
+
+    function drawLives() {
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "#25ee29";
+        ctx.fillText("Lives: " + live, canvas.width - 65, 20);
+    }
+
+    function drawBricks() {
+        for (let r = 0; r < brickRowCount; r++) {
+            for (let c = 0; c < brickColCount; c++) {
+                if (bricks[r][c].status === 1) {
+                    let brickX = (c * (brickWidth + brickPadding)) + brickOffSetLeft;
+                    let brickY = (r * (brickHeight + brickPadding)) + brickOffSetTop;
+                    let color = "#" + Math.random().toString(16).substr(2, 6);
+                    bricks[r][c].x = brickX;
+                    bricks[r][c].y = brickY;
+                    ctx.beginPath();
+                    ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                    ctx.fillStyle = color;
+                    ctx.fill();
+                    ctx.closePath();
+                }
+
+            }
+        }
+    }
+
+    function drawBall() {
+        ctx.beginPath();
+        ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    function drawPaddle() {
+        ctx.beginPath();
+        ctx.fillStyle = "red";
+        ctx.fillRect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+        ctx.closePath()
+    }
+
+    function collisionDetection() {
+        for (let r = 0; r < brickRowCount; r++) {
+            for (let c = 0; c < brickColCount; c++) {
+                let b = bricks[r][c];
+                if (b.status === 1) {
+                    if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+                        dy = -dy;
+                        b.status = 0;
+                        score++;
+                        if (score === brickRowCount * brickColCount) {
+                            alert("YOU WIN");
+                            document.location.reload();
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBricks();
+        drawBall();
+        drawPaddle();
+        drawScore();
+        drawLives();
+        collisionDetection();
+
+        if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+            dx = -dx;
+        }
+        if (y + dy < ballRadius) {
+            dy = -dy;
+        } else if (y + dy > canvas.height - ballRadius) {
+            if (x > paddleX && x < paddleX + paddleWidth) {
+                dy = -dy;
+            } else {
+                live--;
+                if (!live) {
+                    alert("GAME OVER");
+                    document.location.reload();
+                } else {
+                    x = Math.random() * (550 - 350) + 350;
+                    y = Math.random() * (400 - (canvas.height - 30)) + (canvas.height - 30);
+                    dx = 5;
+                    dy = -5;
+                    paddleX = (canvas.width - paddleWidth) / 2;
+                }
+            }
+        }
+
+        if (arrowRight && paddleX < canvas.width - paddleWidth) {
+            paddleX += 7;
+        } else if (arrowLeft && paddleX > 0) {
+            paddleX -= 7;
+        }
+
+        x += dx;
+        y += dy;
+        if (!paused) {
+            requestAnimationFrame(draw);
+        }
+
+
+    }
+
+    function display() {
+        drawBricks();
+        drawPaddle();
+        drawScore();
+        drawBall();
+        drawLives();
+    }
+
+    display();
+
+</script>
+
+</body>
+<audio id="autoplay" autoplay loop>
+    <source src="audio/background.mp3" type="audio/mpeg">
+</audio>
+</html>
