@@ -20,27 +20,26 @@
 <script>
     let canvas = document.getElementById("myCanvas");
     let ctx = canvas.getContext('2d');
-    let ballRadius = 7;
+    let ballRadius = 5;
     let x = Math.random() * (550 - 350) + 350;
     let y = Math.random() * (400 - (canvas.height - 30)) + (canvas.height - 30);
     let dx = 5;
     let dy = -5;
-    let paddleHeight = 10;
-    let paddleWidth = 80;
-    let paddleX = (canvas.width - paddleWidth) / 2;
-    let brickColCount = 12;
-    let brickRowCount = 4;
+    let barHeight = 10;
+    let barWidth = 80;
+    let barX = (canvas.width - barWidth) / 2;
+    let brickColCount = 16;
+    let brickRowCount = 5;
     let brickPadding = 10;
-    let brickWidth = 60;
-    let brickHeight = 20;
+    let brickWidth = 45;
+    let brickHeight = 15;
     let brickOffSetTop = 30;
-    let brickOffSetLeft = 30;
+    let brickOffSetLeft = 15;
     let arrowLeft = false;
     let arrowRight = false;
     let score = 0;
     let live = 2;
     let paused = false;
-    let color = "#" + Math.random().toString(16).substr(2, 6);
 
     function plays() {
         document.getElementById("autoplay").play();
@@ -50,6 +49,7 @@
     function stops() {
         paused = !paused;
         draw();
+        document.getElementById("autoplay").pause();
     }
 
     let bricks = [];
@@ -81,22 +81,22 @@
     }
 
     function mouseMove(e) {
-        let relativeX = e.clientX - canvas.offsetLeft;
-        if (relativeX > 0 && relativeX < canvas.width) {
-            paddleX = relativeX - paddleWidth / 2;
+        let mouseX = e.clientX - canvas.offsetLeft;
+        if (mouseX > 0 && mouseX < canvas.width) {
+            barX = mouseX - barWidth / 2;
         }
     }
 
 
     function drawScore() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#ecda36";
+        ctx.fillStyle = "#4aff14";
         ctx.fillText("Score: " + score, 10, 20);
     }
 
     function drawLives() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#25ee29";
+        ctx.fillStyle = "#08fa08";
         ctx.fillText("Lives: " + live, canvas.width - 65, 20);
     }
 
@@ -128,10 +128,10 @@
         ctx.closePath();
     }
 
-    function drawPaddle() {
+    function drawBar() {
         ctx.beginPath();
         ctx.fillStyle = "red";
-        ctx.fillRect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+        ctx.fillRect(barX, canvas.height - barHeight, barWidth, barHeight);
         ctx.closePath()
     }
 
@@ -159,7 +159,7 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawBricks();
         drawBall();
-        drawPaddle();
+        drawBar();
         drawScore();
         drawLives();
         collisionDetection();
@@ -170,7 +170,7 @@
         if (y + dy < ballRadius) {
             dy = -dy;
         } else if (y + dy > canvas.height - ballRadius) {
-            if (x > paddleX && x < paddleX + paddleWidth) {
+            if (x > barX && x < barX + barWidth) {
                 dy = -dy;
             } else {
                 live--;
@@ -182,29 +182,26 @@
                     y = Math.random() * (400 - (canvas.height - 30)) + (canvas.height - 30);
                     dx = 5;
                     dy = -5;
-                    paddleX = (canvas.width - paddleWidth) / 2;
+                    barX = (canvas.width - barWidth) / 2;
                 }
             }
         }
-
-        if (arrowRight && paddleX < canvas.width - paddleWidth) {
-            paddleX += 7;
-        } else if (arrowLeft && paddleX > 0) {
-            paddleX -= 7;
+        if (arrowRight && barX < canvas.width - barWidth) {
+            barX += 7;
+        } else if (arrowLeft && barX > 0) {
+            barX -= 7;
         }
-
         x += dx;
         y += dy;
         if (!paused) {
             requestAnimationFrame(draw);
+            document.getElementById("autoplay").play();
         }
-
-
     }
 
     function display() {
         drawBricks();
-        drawPaddle();
+        drawBar();
         drawScore();
         drawBall();
         drawLives();

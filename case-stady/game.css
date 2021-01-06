@@ -22,7 +22,7 @@ button {
     background-color: gold;
 }
 
-* {
-    background: aqua;
+body {
+    background-image: linear-gradient( #f82c07 10%, #2511ec 40%, #9e0bc6 50%);
 
 }
