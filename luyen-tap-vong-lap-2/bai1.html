@@ -6,17 +6,43 @@
 </head>
 <body>
 <script>
-    let a, b, c, i;
-    a = 0;
-    b = 1;
-    c = a + b;
-    document.write(a+"<br/>"+b+"<br/>"+c+"<br/>");
-    for (i = 0; i < 100; i++) {
-        a = b;
-        b = c;
-        c = a + b;
-        document.write(c + "<br/>")
+    // let a, b, c, i;
+    // a = 0;
+    // b = 1;
+    // c = a + b;
+    // document.write(a+"<br/>"+b+"<br/>"+c+"<br/>");
+    // for (i = 0; i < 100; i++) {
+    //     a = b;
+    //     b = c;
+    //     c = a + b;
+    //     document.write(c + "<br/>")
+    // }
+    let x = +parseInt(prompt())
+
+    function isFibonacci(x) {
+        let a = 1, b = 0, temp;
+        let n = 0
+        while (n >= 0) {
+            temp = a;
+            a = a + b;
+            b = temp;
+            if (x === b) {
+                alert("true");
+                break;
+            } else {
+                if (b > x) {
+                    alert("false");
+                    break;
+                }
+            }
+            n++;
+        }
+
+
     }
+
+    isFibonacci(x)
+
 </script>
 </body>
 </html>
